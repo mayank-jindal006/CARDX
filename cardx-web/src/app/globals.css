@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #050505;
+  --color-background-secondary: #0A0A0C;
+  --color-accent-primary: #2B6CFF;
+  --color-accent-secondary: #00D6FF;
+  --color-text-heading: rgba(255, 255, 255, 0.9);
+  --color-text-body: rgba(255, 255, 255, 0.6);
+  --bg-light: #F4F4F5;
+  --bg-dark: #050505;
+  --bg-accent: #2B6CFF;
+  --text-on-light: #050505;
+  --text-on-dark: #FFFFFF;
+  --font-sans: var(--font-sans);
+  --font-display: var(--font-display);
+}
+
+@layer base {
+  body {
+    background-color: var(--color-background);
+    color: var(--color-text-body);
+    font-family: var(--font-sans);
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--color-text-heading);
+    font-family: var(--font-display);
+    letter-spacing: -0.04em; /* exceptionally tight tracking for huge headings */
+  }
+}
+
+/* Custom utility for the glassmorphism nav */
+@utility glass-nav {
+  background-color: rgba(5, 5, 5, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Custom cursor — small dot + ring for a premium feel */
+@layer base {
+  html, body {
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='10' fill='none' stroke='rgba(255,255,255,0.5)' stroke-width='1.5'/%3E%3Ccircle cx='12' cy='12' r='2' fill='white'/%3E%3C/svg%3E") 12 12, crosshair;
+  }
+
+  a, button, [role="button"], input[type="submit"], select, label[for] {
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='10' fill='rgba(43,108,255,0.3)' stroke='rgba(43,108,255,0.8)' stroke-width='1.5'/%3E%3Ccircle cx='12' cy='12' r='3' fill='white'/%3E%3C/svg%3E") 12 12, pointer;
+  }
+}
